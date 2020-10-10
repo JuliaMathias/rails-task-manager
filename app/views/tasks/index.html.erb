@@ -1,9 +1,16 @@
-<h1>My tasks</h1>
+<%= link_to 'add a new task', tasks_new_path, class: "btn btn-outline-info float-right mt-2" %>
+<h1 class="mb-4">My tasks</h1>
 
-<div class="mt-5 d-flex flex-row justify-content-between flex-wrap">
+<div>
   <ul class="list-unstyled">
     <% @tasks.each do |task| %>
-      <li class="pb-1"><%= check_box "task", "completed", {:checked => task.completed, :disabled => true} %> <%= link_to task.title, task_path(task) %></li>
+      <li class="pb-1">
+        <%= check_box "task", "completed", {:checked => task.completed, :disabled => true} %>
+        <%= link_to task.title, task_path(task), class: "text-info text-decoration-none" %>
+        <%= link_to task_path(task), method: :delete, data: { confirm: "Are you sure?" } do %>
+          <i class="text-info fa fa-trash-o" aria-hidden="true"></i>
+        <% end %>
+        </li>
     <% end %>
   </ul>
 </div>

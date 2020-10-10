@@ -1,3 +1,4 @@
+<%= link_to 'edit task', edit_task_path(@task), class: "btn btn-outline-info float-right mt-2" %>
 <h1 class="mb-3"><%= @task.title %></h1>
 <div class="alert alert-info" role="alert">
   <%= @task.details %>
@@ -9,3 +10,4 @@
     This task is not completed
   <% end %>  </p>
 
+<%= link_to 'back', tasks_path, class: "badge badge-info" %>

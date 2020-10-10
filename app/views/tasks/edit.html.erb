@@ -1,4 +1,5 @@
-<h1 class="mb-5">New Task</h1>
+
+<h1 class="mb-5">Edit Task</h1>
 
 <%= form_for(@task) do |f| %>
   <div class="form-group">
@@ -8,6 +9,10 @@
   <div class="form-group">
     <%= f.label :details %>
     <%= f.text_field :details, class: "form-control" %>
+  </div>
+  <div class="w-100 form-check form-check-inline">
+    <%= f.check_box :completed, class: "form-check-input" %>
+    <%= f.label :completed, class: "form-check-label" %>
   </div>
   <%= f.submit class: "btn btn-info mt-3 mb-5" %>
 <% end %>
