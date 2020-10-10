@@ -1,0 +1,10 @@
+<h1>My tasks</h1>
+
+<div class="mt-5 d-flex flex-row justify-content-between flex-wrap">
+  <ul class="list-unstyled">
+    <% @tasks.each do |task| %>
+      <li class="pb-1"><%= check_box "task", "completed", {:checked => task.completed, :disabled => true} %> <%= link_to task.title, task_path(task) %></li>
+    <% end %>
+  </ul>
+</div>
+

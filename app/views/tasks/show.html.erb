@@ -1,0 +1,11 @@
+<h1 class="mb-3"><%= @task.title %></h1>
+<div class="alert alert-info" role="alert">
+  <%= @task.details %>
+</div>
+<p><%= check_box "task", "completed", {:checked => @task.completed, :disabled => true} %>
+  <% if @task.completed %>
+    This task is completed
+  <% else %>
+    This task is not completed
+  <% end %>  </p>
+
